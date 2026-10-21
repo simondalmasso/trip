@@ -3,9 +3,9 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import "@testing-library/jest-dom/vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 
-vi.mock("./components/ui/cluster-about-glossy-base", () => ({
-  default: () => <div data-testid="webgl-backdrop" />,
-}), { virtual: true });
+vi.mock("./FluidField", () => ({
+  default: () => <canvas data-testid="fluid-backdrop" />,
+}));
 
 import App from "./App";
 
@@ -21,8 +21,8 @@ describe("TRIP landing page", () => {
     expect(screen.getByRole("link", { name: /^INSTAGRAM/i })).toHaveAttribute("href", "https://www.instagram.com/trip.teatro.laboratorio/");
   });
 
-  it("renders the WebGL component slot", () => {
+  it("renders the animated fluid canvas slot", () => {
     render(<App />);
-    expect(screen.getByTestId("webgl-backdrop")).toBeTruthy();
+    expect(screen.getByTestId("fluid-backdrop")).toBeTruthy();
   });
 });
