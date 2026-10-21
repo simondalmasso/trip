@@ -167,7 +167,7 @@ export default function App() {
           <p>Una puerta distinta para entrar al juego.</p>
         </div>
         {routes.map((route) => (
-          <article className="route-row" id={route.id} key={route.id} style={{ "--route-color": route.color } as React.CSSProperties}>
+          <article className="route-row" id={route.id} key={route.id} style={{ "--route-color": route.color } as CSSProperties}>
             <span className="route-row-number">{route.number}</span>
             <div className="route-row-main">
               <h2>{route.title}</h2>
