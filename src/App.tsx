@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { CSSProperties } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import ClusterAboutGlossy from "./components/ui/cluster-about-glossy-base";
+import FluidField from "./FluidField";
 
 type Dot = { x: number; y: number };
 
@@ -57,19 +57,7 @@ export default function App() {
   return (
     <main>
       <section className="hero" aria-labelledby="hero-title">
-        <div className="webgl-wash" aria-hidden="true">
-          <ClusterAboutGlossy
-            background="#090909"
-            count={42}
-            merge={58}
-            scale={150}
-            palette="scatter"
-            colors={["#f2bd45", "#f05a48", "#b7a0ff", "#f5eee4"]}
-            speed={35}
-            gather={4}
-            hover={65}
-          />
-        </div>
+        <div className="fluid-wash" aria-hidden="true"><FluidField /></div>
         <header className="topbar">
           <a className="wordmark" href="#inicio" aria-label="TRIP, inicio">TRIP<span>®</span></a>
           <span className="topbar-note">TEATRO · LABORATORIO</span>
