@@ -18,7 +18,7 @@ describe("TRIP landing page", () => {
     expect(screen.getAllByText("CLOWN").length).toBeGreaterThan(0);
     expect(screen.getAllByText("BUFÓN").length).toBeGreaterThan(0);
     expect(screen.getAllByText("MÁSCARAS").length).toBeGreaterThan(0);
-    expect(screen.getByRole("link", { name: /instagram/i })).toHaveAttribute("href", "https://www.instagram.com/trip.teatro.laboratorio/");
+    expect(screen.getByRole("link", { name: /^INSTAGRAM/i })).toHaveAttribute("href", "https://www.instagram.com/trip.teatro.laboratorio/");
   });
 
   it("renders the WebGL component slot", () => {
