@@ -16,6 +16,8 @@
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "latest",
+    "tailwindcss": "latest",
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@types/react": "latest",
