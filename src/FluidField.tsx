@@ -135,6 +135,10 @@ export default function FluidField() {
 
     const onPointerMove = (event: PointerEvent) => {
       const rect = canvas.getBoundingClientRect();
+      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) {
+        pointer.active = false;
+        return;
+      }
       pointer.x = Math.min(1, Math.max(0, (event.clientX - rect.left) / rect.width));
       pointer.y = Math.min(1, Math.max(0, (event.clientY - rect.top) / rect.height));
       pointer.active = true;
@@ -149,15 +153,15 @@ export default function FluidField() {
 
     resize();
     if (!reducedMotion) frame = window.requestAnimationFrame(animate);
-    canvas.addEventListener("pointermove", onPointerMove, { passive: true });
-    canvas.addEventListener("pointerleave", onPointerLeave);
+    window.addEventListener("pointermove", onPointerMove, { passive: true });
+    window.addEventListener("pointerleave", onPointerLeave);
     window.addEventListener("resize", resize, { passive: true });
     motionQuery.addEventListener("change", onMotionChange);
 
     return () => {
       window.cancelAnimationFrame(frame);
-      canvas.removeEventListener("pointermove", onPointerMove);
-      canvas.removeEventListener("pointerleave", onPointerLeave);
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerleave", onPointerLeave);
       window.removeEventListener("resize", resize);
       motionQuery.removeEventListener("change", onMotionChange);
     };
