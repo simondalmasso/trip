@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import type { CSSProperties } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import ClusterAboutGlossy from "./components/ui/cluster-about-glossy-base";
 
@@ -130,7 +131,7 @@ export default function App() {
               <a className="route-orb-link" href={`#${route.id}`} key={route.id} aria-label={`Explorar ${route.title}`}>
                 <motion.span
                   className="route-orb"
-                  style={{ "--orb-color": route.color } as React.CSSProperties}
+                  style={{ "--orb-color": route.color } as CSSProperties}
                   whileHover={reduceMotion ? undefined : { scale: 1.07, rotate: index % 2 ? -5 : 5 }}
                   whileTap={reduceMotion ? undefined : { scale: 0.97 }}
                 >
@@ -165,7 +166,7 @@ export default function App() {
           <div className="section-index">01 / TRES RECORRIDOS</div>
           <p>Una puerta distinta para entrar al juego.</p>
         </div>
-        {routes.map((route, index) => (
+        {routes.map((route) => (
           <article className="route-row" id={route.id} key={route.id} style={{ "--route-color": route.color } as React.CSSProperties}>
             <span className="route-row-number">{route.number}</span>
             <div className="route-row-main">
