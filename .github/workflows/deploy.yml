@@ -28,7 +28,7 @@ jobs:
             echo "::error::Add the ORIGINKIT_API_KEY repository secret to install the original Cluster About Glossy source in CI."
             exit 1
           fi
-          npx originkit@latest add cluster-about-glossy --base --path src/components/ui --auth "$ORIGINKIT_API_KEY"
+          npx originkit@latest add cluster-about-glossy --base --path src/components --auth "$ORIGINKIT_API_KEY"
       - name: Test
         run: npm test
       - name: Build
