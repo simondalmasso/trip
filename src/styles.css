@@ -22,8 +22,8 @@ a:focus-visible { outline: 2px solid #f2bd45; outline-offset: 5px; }
 ::selection { background: #f2bd45; color: #090909; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .hero { min-height: 100svh; min-height: 720px; position: relative; overflow: hidden; display: flex; flex-direction: column; isolation: isolate; }
-.webgl-wash { position: absolute; z-index: -2; inset: 0; opacity: .47; pointer-events: none; }
-.webgl-wash > * { width: 100%; height: 100%; }
+.fluid-wash { position: absolute; z-index: -2; inset: 0; opacity: .88; pointer-events: none; overflow: hidden; mix-blend-mode: screen; }
+.fluid-canvas { display: block; width: 100%; height: 100%; }
 .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at 50% 46%, transparent 0, rgba(9,9,9,.28) 42%, #090909 100%); }
 .topbar { display: flex; align-items: center; justify-content: space-between; padding: 26px clamp(20px, 5.4vw, 84px); position: relative; z-index: 2; }
 .wordmark { font-size: 1.4rem; font-weight: 800; letter-spacing: -.1em; }
